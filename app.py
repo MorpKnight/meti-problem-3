@@ -75,4 +75,7 @@ if st.button(f"Generate Images of digit {selected_digit}"):
         cols = st.columns(num_images)
         for i, col in enumerate(cols):
             img = generated_images[i].squeeze().cpu().numpy()
-            col.image(img, use_column_width=True, caption=f"Sample {i+1}")
+            
+            # --- PERUBAHAN DI SINI ---
+            # Menggunakan parameter baru 'use_container_width'
+            col.image(img, use_container_width=True, caption=f"Sample {i+1}")
